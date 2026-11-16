@@ -116,10 +116,10 @@ if __name__ == "__main__":
     def usage():
         print(
             "Usage:\n"
-            "  python app.py list\n"
-            "  python app.py add <first_name> <last_name> <email> <YYYY-MM-DD|none>\n"
-            "  python app.py update <student_id> <new_email>\n"
-            "  python app.py delete <student_id>"
+            "  python app/app.py list\n"
+            "  python app/app.py add <first_name> <last_name> <email> <YYYY-MM-DD|none>\n"
+            "  python app/app.py update <student_id> <new_email>\n"
+            "  python app/app.py delete <student_id>"
         )
 
     args = sys.argv[1:]
