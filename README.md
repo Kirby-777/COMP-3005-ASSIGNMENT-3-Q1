@@ -32,4 +32,4 @@ psql -U postgres -d school -f database/Students.sql)
 Open app/app.py and edit the DB_CONFIG dictionary at the top of the file to match your local PostgreSQL credentials.
 
 ### Video Link
-https://youtu.be/swmQuqRbKv0
+[https://youtu.be/swmQuqRbKv0](https://youtu.be/swmQuqRbKv0)
