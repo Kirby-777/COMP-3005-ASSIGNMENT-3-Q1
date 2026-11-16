@@ -116,21 +116,41 @@ def deleteStudent(student_id):
     finally:
         conn.close()
 
-"""
+
 if __name__ == "__main__":
-    print("=== Initial records ===")
-    getAllStudents()
+    import sys
 
-    print("\n=== Adding a new student ===")
-    addStudent("Alice", "Johnson", "alice.johnson@example.com", "2023-09-05")
-    getAllStudents()
+    def usage():
+        print(
+            "Usage:\n"
+            "  python app.py list\n"
+            "  python app.py add <first_name> <last_name> <email> <YYYY-MM-DD|none>\n"
+            "  python app.py update <student_id> <new_email>\n"
+            "  python app.py delete <student_id>"
+        )
 
-    print("\n=== Updating Alice's email ===")
-    # Look up Alice's ID dynamically (last inserted)
-    updateStudentEmail(4, "alice.new@example.com")
-    getAllStudents()
+    args = sys.argv[1:]
+    if not args:
+        usage()
+        sys.exit(1)
 
-    print("\n=== Deleting Jim Beam (ID 3) ===")
-    deleteStudent(3)
-    getAllStudents()
-    """
+    cmd = args[0].lower()
+
+    if cmd == "list" and len(args) == 1:
+        getAllStudents()
+
+    elif cmd == "add" and len(args) == 5:
+        first, last, email, date = args[1], args[2], args[3], args[4]
+        if date.lower() == "none":
+            date = None
+        addStudent(first, last, email, date)
+
+    elif cmd == "update" and len(args) == 3:
+        updateStudentEmail(int(args[1]), args[2])
+
+    elif cmd == "delete" and len(args) == 2:
+        deleteStudent(int(args[1]))
+
+    else:
+        usage()
+        sys.exit(1)
