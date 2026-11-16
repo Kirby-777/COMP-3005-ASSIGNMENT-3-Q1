@@ -6,7 +6,7 @@ performs CRUD operations on a `students` table.
 ## Prerequisites
 
 - Python 3.8+
-- PostgreSQL 12+ (running locally or reachable over the network)
+- PostgreSQL 12+
 - `psycopg2` PostgreSQL adapter
 
 ## Setup
