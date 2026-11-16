@@ -16,6 +16,7 @@ performs CRUD operations on a `students` table.
 ```bash
 pip install psycopg2-binary
 ```
+
 ### 2. Create the database
 You can create the database using pgAdmin or via terminal using:
 ```bash
